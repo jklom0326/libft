@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 18:29:34 by shan              #+#    #+#             */
-/*   Updated: 2021/12/01 18:05:10 by shan             ###   ########.fr       */
+/*   Updated: 2021/12/02 20:29:04 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <stdlib.h>
 # include <limits.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-    void    *content;
-    struct s_list   *next;
-}               t_list;
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
