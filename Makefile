@@ -6,7 +6,7 @@
 #    By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/18 18:34:49 by shan              #+#    #+#              #
-#    Updated: 2021/11/30 21:14:03 by shan             ###   ########.fr        #
+#    Updated: 2021/12/06 21:38:07 by shan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,5 +70,16 @@ SRC_BONUS	=	ft_lstadd_back.c\
 OBJS		=	$(SRCS:.c=.o)
 OBJS_BONUS	=	$(SRCS_BONUS:.c=.o)
 
+all			:	$(NAME)
 
+%.o			:	%.c
+				$(CC) $(CFLAG) -c $< -o $@
 
+clean		:
+				$(RM) $(OBJS) $(OBJS_BONUS)
+
+fclean		:	clean
+				$(RM) $(NAME)
+re			:	fclean all
+
+bonus		:	

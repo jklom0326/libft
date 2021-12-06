@@ -6,8 +6,12 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 22:02:32 by shan              #+#    #+#             */
-/*   Updated: 2021/12/03 22:02:34 by shan             ###   ########.fr       */
+/*   Updated: 2021/12/06 16:17:42 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-
+int	ft_isalnum(int c)
+{
+	return (ft_isdigit(c) || ft_isalpha(c));
+}
