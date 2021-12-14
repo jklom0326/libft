@@ -6,8 +6,12 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 21:17:53 by shan              #+#    #+#             */
-/*   Updated: 2021/12/06 21:17:59 by shan             ###   ########.fr       */
+/*   Updated: 2021/12/15 02:13:31 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
