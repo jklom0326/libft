@@ -1,32 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/15 02:13:58 by shan              #+#    #+#             */
-/*   Updated: 2021/12/16 00:08:19 by shan             ###   ########.fr       */
+/*   Created: 2021/12/15 21:11:39 by shan              #+#    #+#             */
+/*   Updated: 2021/12/15 21:18:07 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	void	*result;
 
-	if (!dst && !src)
-		return (NULL);
-	result = dst;
-	if (dst < src)
-	{
-		while (len--)
-			*(unsigned char *)(dst++) = *(unsigned char *)(src++);
-	}
-	else
-	{
-		while (len--)
-			*(unsigned char *)(dst + len) = *(unsigned char *)(src + len);
-	}
-	return (result);
-}
