@@ -6,7 +6,7 @@
 #    By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/18 18:34:49 by shan              #+#    #+#              #
-#    Updated: 2021/12/20 21:02:07 by shan             ###   ########.fr        #
+#    Updated: 2021/12/21 02:57:37 by shan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,13 +38,13 @@ SRCS		=	ft_isalpha.c\
 				ft_strchr.c\
 				ft_strrchr.c\
 				ft_strncmp.c\
-#				ft_memchr.c\
+				ft_memchr.c\
 				ft_memcmp.c\
 				ft_strnstr.c\
 				ft_atoi.c\
 				ft_calloc.c\
 				ft_strdup.c\
-				ft_substr.c\
+#				ft_substr.c\
 				ft_strjoin.c\
 				ft_strtrim.c\
 				ft_split.c\
