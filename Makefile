@@ -6,7 +6,7 @@
 #    By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/18 18:34:49 by shan              #+#    #+#              #
-#    Updated: 2022/01/04 16:58:34 by shan             ###   ########.fr        #
+#    Updated: 2022/01/05 02:36:29 by shan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,13 +50,13 @@ SRCS		=	ft_isalpha.c\
 				ft_putchar_fd.c\
 				ft_putstr_fd.c\
 				ft_putendl_fd.c\
-				ft_putnbr_fd.c
-#				ft_split.c\
+				ft_putnbr_fd.c\
+				ft_split.c\
 				ft_itoa.c\
 				ft_strncmp.c\
-				ft_striteri.c\
+				ft_striteri.c
 
-#SRC_BONUS	=	ft_lstadd_back.c\
+SRC_BONUS	=	ft_lstadd_back.c\
 				ft_lstadd_front.c\
 				ft_lstclear.c\
 				ft_lstdelone.c\
@@ -71,23 +71,23 @@ OBJS		=	$(SRCS:.c=.o)
 OBJS_BONUS	=	$(SRCS_BONUS:.c=.o)
 
 %.o			:	%.c
-				$(CC) $(CFLAG) -c $< -o $@
+			$(CC) $(CFLAG) -c $< -o $@
 
 $(NAME)		:	$(OBJS)
-				$(AR) $@ $^
+			$(AR) $@ $^
 
 all			:	$(NAME)
 
 clean		:
-				$(RM) $(OBJS) $(OBJS_BONUS)
+			$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean		:	clean
-				$(RM) $(NAME)
+			$(RM) $(NAME)
 
-re			:	clean all
+re			:	fclean all
 
-#so:
-#	$(CC) -nostartfiles -fPIC $(CFLAG) $(SRCS)
-#		gcc -nostartfiles -shared -o libft.so $(OBJS)
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAG) $(SRCS)
+		gcc -nostartfiles -shared -o libft.so $(OBJS)
 
-.PHONY		:	bonus all clean fclean re
+.PHONY		:	all clean fclean re
