@@ -6,7 +6,7 @@
 #    By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/18 18:34:49 by shan              #+#    #+#              #
-#    Updated: 2022/01/05 02:36:29 by shan             ###   ########.fr        #
+#    Updated: 2022/01/07 03:21:40 by shan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,6 @@ CFLAG		=	-Wall -Wextra -Werror
 RM			=	rm -f
 
 AR			=	ar rcs
-
-INCLUDES	=	./libft.h
 
 SRCS		=	ft_isalpha.c\
 				ft_isdigit.c\
@@ -54,40 +52,43 @@ SRCS		=	ft_isalpha.c\
 				ft_split.c\
 				ft_itoa.c\
 				ft_strncmp.c\
-				ft_striteri.c
+				ft_strmapi.c\
+				ft_striteri.c\
 
-SRC_BONUS	=	ft_lstadd_back.c\
+SRCS_BONUS	=	ft_lstnew.c\
 				ft_lstadd_front.c\
-				ft_lstclear.c\
-				ft_lstdelone.c\
-				ft_lstiter.c\
-				ft_lstast.c\
-				ft_lastmap.c\
-				ft_lstnew.c\
 				ft_lstsize.c\
+				ft_lstlast.c\
+				ft_lstadd_back.c\
+				ft_lstdelone.c\
+				ft_lstclear.c\
+				ft_lstiter.c\
+				ft_lstmap.c\
 
 OBJS		=	$(SRCS:.c=.o)
 
 OBJS_BONUS	=	$(SRCS_BONUS:.c=.o)
 
-%.o			:	%.c
-			$(CC) $(CFLAG) -c $< -o $@
+%.o		:	%.c
+			$(CC) $(CFLAG) -c -o $*.o $<
+			$(AR) $(NAME) $@
 
-$(NAME)		:	$(OBJS)
-			$(AR) $@ $^
+$(NAME)		: 	$(OBJS)
 
 all			:	$(NAME)
 
+bonus		:	$(OBJS) $(OBJS_BONUS)
+
 clean		:
-			$(RM) $(OBJS) $(OBJS_BONUS)
+				$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean		:	clean
-			$(RM) $(NAME)
+				$(RM) $(NAME)
 
 re			:	fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAG) $(SRCS)
-		gcc -nostartfiles -shared -o libft.so $(OBJS)
+so			:
+				$(CC) -nostartfiles -fPIC $(CFLAG) $(SRCS)
+				gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 .PHONY		:	all clean fclean re
