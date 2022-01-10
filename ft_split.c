@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 17:34:34 by shan              #+#    #+#             */
-/*   Updated: 2022/01/04 23:55:03 by shan             ###   ########.fr       */
+/*   Updated: 2022/01/10 21:47:10 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -60,7 +60,7 @@ static char	*ft_strndup(const char *s, size_t num)
 	return (word);
 }
 
-static int	ft_free(char **s, int i)
+static char	**ft_free(char ***s, int i)
 {
 	while (i--)
 	{
@@ -68,7 +68,7 @@ static int	ft_free(char **s, int i)
 		s[i] = NULL;
 	}
 	free(s);
-	s = NULL;
+	*s = NULL;
 	return (0);
 }
 
@@ -93,7 +93,7 @@ char	**ft_split(char const *s, char c)
 		wordlen = ft_wordlen(s, c);
 		result[nb] = ft_strndup(s, wordlen);
 		if (result[nb] == NULL)
-			ft_free(result, nb - 1);
+			return (ft_free(&result, wordlen - 1));
 		s += wordlen;
 		nb++;
 	}

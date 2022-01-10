@@ -6,7 +6,7 @@
 #    By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/18 18:34:49 by shan              #+#    #+#              #
-#    Updated: 2022/01/07 03:21:40 by shan             ###   ########.fr        #
+#    Updated: 2022/01/10 20:54:21 by shan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,9 +86,5 @@ fclean		:	clean
 				$(RM) $(NAME)
 
 re			:	fclean all
-
-so			:
-				$(CC) -nostartfiles -fPIC $(CFLAG) $(SRCS)
-				gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 .PHONY		:	all clean fclean re
